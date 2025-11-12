@@ -42,7 +42,7 @@
             font-weight: 800; /* Hará que los títulos sean más gruesos y llamativos */
         }
         
-        /* --- SIDEBAR (Copiar de tu archivo original) --- */
+
         .sidebar {
             width: 80px;
             background-color: var(--dark);
@@ -52,7 +52,7 @@
             align-items: center;
             padding-top: 15px;
         }
-        /* ... (Resto de estilos del sidebar sin cambios) ... */
+
         .sidebar .logo {
             width: 45px;
             height: 45px;
@@ -81,8 +81,16 @@
             border-radius: 8px;
             width: 60%;
         }
+        .main-container {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
-        /* --- CONTENEDOR PRINCIPAL --- */
+
+                /* --- CONTENEDOR PRINCIPAL --- */
         .main-container {
             flex: 1;
             display: flex;
@@ -181,8 +189,9 @@
         background-color: #e56f26;
       }
 
-        
+
     </style>
+    
 </head>
 
 <body>
@@ -196,12 +205,10 @@
         <a href="PW_Profile.html" class="nav-link"><i class="fas fa-user"></i>Profile</a>
         <a href="PW_Home.html" class="nav-link"><i class="fas fa-home"></i>Home</a>
         
-            <a href="PW_Movie.html" class="nav-link">
+            <a href="PW_Search.html" class="nav-link">
                 <i class="fas fa-film"></i>Movie
             </a>
-            <a href="PW_Search.html" class="nav-link">
-                <i class="fas fa-search"></i>Search
-            </a>
+            
         <a href="P01_settings.html" class="nav-link"><i class="fas fa-cog"></i>Setting</a>
         <a href="P01_help.html" class="nav-link"><i class="fas fa-question-circle"></i>Help</a>
     </div>
