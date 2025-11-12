@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Home | Film</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+              rel="stylesheet" crossorigin="anonymous">
+
+        <!-- Icons -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <style>
+            :root {
+                --orange:   #F58F29;
+                --blue:     #058ED9;
+                --honey:    #E5F4E3;
+                --duke:     #2708A0;
+                --dark:     #212529;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                min-height: 100vh;
+                display: flex;
+                background-color: white;
+            }
+
+            .sidebar {
+                width: 120px;
+                background-color: var(--dark);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 20px;
+            }
+
+            .sidebar .logo {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                margin-bottom: 30px;
+            }
+
+            .sidebar .nav-link {
+                color: var(--blue);
+                font-weight: 500;
+                text-align: center;
+                margin: 10px 0;
+                transition: 0.3s;
+                font-size: 13px;
+                padding: 10px 5px;
+                width: 80%;
+                border-radius: 10px;
+            }
+
+            .sidebar .nav-link i {
+                display: block;
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+
+            .sidebar .nav-link:hover {
+                color: white;
+                background-color: var(--orange);
+            }
+
+            .main-container {
+                flex: 1;
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            .top-navbar {
+                background-color: var(--dark);
+                padding: 18px;
+            }
+
+            .top-navbar .form-control {
+                height: 38px;
+                border: 2px solid var(--honey);
+                background-color: white;
+            }
+
+            .create-btn {
+                background-color: var(--orange);
+                border: none;
+                color: white;
+                padding: 7px 16px;
+                border-radius: 8px;
+                font-weight: bold;
+            }
+
+            .create-btn:hover {
+                background-color: #d9791f;
+            }
+
+            .hero {
+                width: 100%;
+                height: 420px;
+                border-radius: 15px;
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 30px;
+                position: relative;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.20);
+                border: 3px solid var(--blue);
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,0.45);
+                backdrop-filter: blur(2px);
+            }
+
+            .hero-center-text {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: white;
+                font-size: 34px;
+                font-weight: bold;
+                padding: 20px;
+                line-height: 1.3;
+                text-shadow: 0 3px 6px rgba(0,0,0,0.6);
+                z-index: 3;
+            }
+
+            .content {
+                padding: 25px;
+                overflow-y: auto;
+            }
+
+            .content-title {
+                margin-bottom: 15px;
+                font-weight: bold;
+                color: var(--duke);
+            }
+
+            .thumbnail {
+                position: relative;
+                padding-top: 150%;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+                background-color: white;
+            }
+
+            .thumbnail img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                background-color: var(--duke);
+            }
+
+            .film-title {
+                text-align: center;
+                margin-top: 8px;
+                font-weight: bold;
+                color: var(--duke);
+            }
+
+            .bg-blue {
+                background-color: var(--blue);
+            }
+
+            .text-blue {
+                color: var(--blue);
+            }
+
+            .text-duke {
+                color: var(--duke);
+            }
+
+            .bg-blue {
+                background-color: var(--blue);
+            }
+
+            .btn-orange {
+                background-color: var(--orange);
+                color: white;
+                border: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .btn-orange:hover {
+                background-color: #d9791f;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="sidebar">
+            <img
+                    src="https://yt3.googleusercontent.com/377lO2PwgIZ3DgQLaNvS6f9dVCQ4Sr7JMzUjbbVsO1llxeKk_QDa7kcK8UJ9hTfQBBoimRGq=s900-c-k-c0x00ffffff-no-rj"
+                    alt="Logo"
+                    class="logo"
+            />
+
+            <a href="P01_profile.html" class="nav-link">
+                <i class="fas fa-user"></i>Profile
+            </a>
+
+            <a href="P01_home.html" class="nav-link">
+                <i class="fas fa-home"></i>Home
+            </a>
+
+            <a href="P01_film.html" class="nav-link">
+                <i class="fas fa-film"></i>Film
+            </a>
+
+            <a href="P01_settings.html" class="nav-link">
+                <i class="fas fa-cog"></i>Setting
+            </a>
+
+            <a href="P01_help.html" class="nav-link">
+                <i class="fas fa-question-circle"></i>Help
+            </a>
+        </div>
+
+        <div class="main-container">
+            <nav class="navbar navbar-dark top-navbar">
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <form class="d-flex w-75">
+                        <input class="form-control" type="text" placeholder="Search...">
+                    </form>
+                    <button class="create-btn ms-3" type="button" data-bs-toggle="modal" data-bs-target="#modalResena">
+                        + Create
+                    </button>
+                </div>
+            </nav>
+
+            <div class="content">
+                <div class="hero" style="background-image:url('https://th.bing.com/th/id/OIP._plitNgPuATaaH3e8cfZ0AHaEo?w=303&h=189&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3');">
+                    <div class="hero-center-text">
+                        Cada película deja una huella.<br>
+                        Captura la tuya.<br>
+                        Haz que tu diario de cine cobre vida.
+                    </div>
+                </div>
+
+                <h4 class="content-title">For you</h4>
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-3">
+                    <!-- Repite este bloque para cada cartel -->
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+
+                    <!-- Puedes duplicar este bloque para más carteles -->
+                </div>
+
+                <h4 class="content-title mt-4">Trends</h4>
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 g-3">
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <div class="col">
+                        <div class="thumbnail">
+                            <img src="https://th.bing.com/th/id/OIP.g7Rb9JsRDoBfn9D82GZ6fgHaLD?w=204&h=305&c=7&r=0&o=7&cb=ucfimgc2&dpr=1.3&pid=1.7&rm=3">
+                        </div>
+                        <div class="film-title">Volver al Futuro</div>
+                    </div>
+                    <!-- Repite según sea necesario -->
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL Crear Reseña -->
+        <div class="modal fade" id="modalResena" tabindex="-1" aria-labelledby="modalResenaLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border: 3px solid var(--blue); border-radius: 12px;">
+
+                    <!-- 🟦 Título principal arriba -->
+                    <div class="px-4 pt-4 pb-2 border-bottom" style="background-color: var(--blue); border-radius: 10px 10px 0 0;">
+                        <h5 class="modal-title text-white fw-bold" id="modalResenaLabel">Crear reseña</h5>
+                    </div>
+
+                    <!-- 🔍 Buscar película -->
+                    <div class="px-4 pt-3">
+                        <label for="buscarPelicula" class="form-label text-duke fw-bold">Buscar película</label>
+                        <div class="input-group">
+                  <span class="input-group-text bg-blue text-white border-0">
+                    <i class="fas fa-search"></i>
+                  </span>
+                            <input type="text" class="form-control border-2" id="buscarPelicula" placeholder="Buscar película..." style="border-color: var(--blue);">
+                        </div>
+                    </div>
+
+                    <!-- ✍️ Campos de reseña -->
+                    <div class="modal-body px-4">
+                        <div class="mb-3">
+                            <label for="tituloResena" class="form-label text-duke">Título</label>
+                            <input type="text" class="form-control border-2" id="tituloResena" placeholder="Escribe el título..." style="border-color: var(--blue);">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cuerpoResena" class="form-label text-duke">Reseña</label>
+                            <textarea class="form-control border-2" id="cuerpoResena" rows="5" placeholder="Escribe tu reseña..." style="border-color: var(--blue);"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 🟧 Botón Publicar -->
+                    <div class="modal-footer px-4 pb-4 border-0">
+                        <button type="button" class="btn btn-orange w-100 fw-bold" id="btnPublicar">Publicar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
