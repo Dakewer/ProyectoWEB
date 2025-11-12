@@ -268,9 +268,37 @@
           >
             + Create
           </button>
+           <button class="btn text-white ms-3" id="logoutBtn" title="Cerrar sesión">
+              <i class="fas fa-sign-out-alt fa-lg"></i>
+           </button>
         </div>
       </nav>
+                  <!-- MODAL CONFIRMAR CIERRE DE SESIÓN -->
+            <div class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="modalLogoutLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header bg-blue text-white">
+                    <h5 class="modal-title fw-bold" id="modalLogoutLabel">
+                    <i class="fas fa-sign-out-alt me-2"></i> Confirmar cierre de sesión
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
 
+                <div class="modal-body text-center">
+                    <p class="fw-semibold text-duke mb-2">¿Estás seguro de que deseas cerrar sesión?
+                </div>
+
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                    Cancelar
+                    </button>
+                    <button type="button" class="btn-orange px-4" id="confirmLogout">
+                    Cerrar sesión
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
       <!-- CONTENIDO PRINCIPAL -->
       <div class="content">
         <div class="film-info">
@@ -425,6 +453,24 @@
           });
         });
       });
+    </script>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const logoutBtn = document.getElementById("logoutBtn");
+                const logoutModal = new bootstrap.Modal(document.getElementById("modalLogout"));
+                const confirmLogout = document.getElementById("confirmLogout");
+
+                // Mostrar modal
+                logoutBtn.addEventListener("click", () => {
+                logoutModal.show();
+                });
+
+                // Redirigir al login al confirmar
+                confirmLogout.addEventListener("click", () => {
+                window.location.href = "PW_login.html"; // cambia el nombre si tu login es otro
+                });
+            });
     </script>
   </body>
 </html>
