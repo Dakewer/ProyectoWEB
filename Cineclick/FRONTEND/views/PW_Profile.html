@@ -299,43 +299,64 @@
             <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px; margin-left: 40px;">
                 <img src="../assets/Yeezus.jpeg" alt="profilePicture" class="rounded-circle" style="height: 200px; width: 200px; object-fit: cover;">
                 <div style="display: flex; align-items: center; gap: 10px;">
-                    <h1 style="margin: 0;">NAME</h1>
-                    <button class="btn bg-dark border-dark text-white" title="Editar" type="button" data-bs-target="#editUser">
+                    <h1 id="userName" style="margin: 0;">NAME</h1>
+                    <button class="btn bg-dark border-dark text-white" title="Editar" type="button" data-bs-toggle="modal" data-bs-target="#editUserModal">
                         <i class="fas fa-pen"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- tabla de contenido de este usuario -->
-            <div class="mt-5 ms-5 d-flex justify-content-center">
-                <div class="text-center" style="border: 3px solid var(--dark); border-radius: 10px; padding: 20px;">
-                    <div class="mb-3 d-flex gap-2 justify-content-center">
-                        <button class="btn btn-orange">Reviews</button>
-                        <button class="btn btn-outline-primary btn-blue-hover">Comments</button>
-                        <button class="btn btn-outline-primary btn-blue-hover">Likes</button>
+            <!-- Tabla de contenido de este usuario -->
+            <div class="mt-5 ms-3 d-flex justify-content-center" style="margin-right: 20px; flex-grow: 1; padding-right: 20px;">
+                <div class="text-center" style="border: 3px solid var(--dark); border-radius: 10px; padding: 20px; width: 90%; max-width: 1200px;">
+                    <div class="mb-3 d-flex justify-content-between gap-0">
+                        <button class="btn btn-orange w-100" style="border-radius: 10px 0 0 10px;">Reviews</button>
+                        <button class="btn btn-outline-primary btn-blue-hover w-100" style="border-radius: 0 0 0 0;">Comments</button>
+                        <button class="btn btn-outline-primary btn-blue-hover w-100" style="border-radius: 0 10px 10px 0;">Likes</button>
                     </div>
 
                     <div style="text-transform: uppercase; font-weight: bold; color: var(--dark); margin-bottom: 10px;">
                         THIS MOVIE IS COOL
                     </div>
 
-                    <div style="font-size: 14px; color: #212529;">
-                        I enjoy this film a lot, it's worth watching.
+                    <div class="d-flex align-items-start" style="font-size: 14px; color: #212529;">
+                        <img src="../assets/TronLegacyPoster.jpeg" alt="Tron Legacy Poster" style="width: 150px; height: auto; margin-right: 20px;">
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit cursus mollis. Suspendisse potenti. Nulla facilisi.
+                                Vivamus sit amet semper lacus, in mollis libero. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
+
+
+        </div>
+
+
+        <!-- Modal para editar el perfil -->
+        <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border: 3px solid var(--blue); border-radius: 12px;">
+
+                    <div class="px-4 pt-4 pb-2 border-bottom" style="background-color: var(--blue); border-radius: 10px 10px 0 0;">
+                        <h5 class="modal-title text-white fw-bold" id="editUserModalLabel">Editar perfil</h5>
+                    </div>
+
+                    <div class="px-4 pt-3">
+                        <label for="newUserName" class="form-label text-duke fw-bold">Nuevo nombre</label>
+                        <input type="text" class="form-control border-2" id="newUserName" placeholder="Escribe tu nuevo nombre..." style="border-color: var(--blue);">
+                    </div>
+
+                    <div class="modal-footer px-4 pb-4 border-0">
+                        <button type="button" class="btn btn-orange w-100 fw-bold" data-bs-dismiss="modal">Guardar cambio</button>
+                    </div>
+
+                </div>
             </div>
         </div>
-
-        <!-- Modal para editar el perfil, TODAVIA EN PROCESO -->
-
-        <div class="modal fade" id="editUser" tabindex="-1" aria-labelledby="editUser" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered"></div>
-        </div>
-
-
-
         <!-- MODAL CREAR RESEÑA -->
     <div
       class="modal fade"
