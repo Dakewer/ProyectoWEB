@@ -88,30 +88,29 @@
       }
 
       /* --- NAVBAR SUPERIOR --- */
-       .top-navbar {
-                background-color: var(--dark);
-                padding: 18px;
-            }
+      .top-navbar {
+        background-color: var(--dark);
+        padding: 18px;
+      }
 
-            .top-navbar .form-control {
-                height: 38px;
-                border: 2px solid var(--honey);
-                background-color: white;
-            }
+      .top-navbar .form-control {
+        height: 38px;
+        border: 2px solid var(--honey);
+        background-color: white;
+      }
 
-            .create-btn {
-                background-color: var(--orange);
-                border: none;
-                color: white;
-                padding: 7px 16px;
-                border-radius: 8px;
-                font-weight: bold;
-            }
+      .create-btn {
+        background-color: var(--orange);
+        border: none;
+        color: white;
+        padding: 7px 16px;
+        border-radius: 8px;
+        font-weight: bold;
+      }
 
-            .create-btn:hover {
-                background-color: #d9791f;
-            }
-
+      .create-btn:hover {
+        background-color: #d9791f;
+      }
 
       /* --- CONTENIDO PRINCIPAL --- */
       .content {
@@ -160,6 +159,32 @@
         padding: 5px 10px;
         border-radius: 6px;
         margin-right: 5px;
+      }
+
+      .tags button {
+        display: inline-block;
+        background-color: var(--blue);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .tags button:hover {
+        background-color: #2b89d3;
+      }
+
+      .heart-icon {
+        color: var(--blue);
+        font-size: 22px;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .heart-icon.active {
+        color: red;
       }
 
       .review {
@@ -236,18 +261,10 @@
   <body>
     <!-- NAVBAR LATERAL -->
     <div class="sidebar">
-      <img
-        src="../assets/Icono.png"        
-        alt="Logo"
-        class="logo"
-      />
-
+      <img src="../assets/Icono.png" alt="Logo" class="logo" />
       <a href="PW_Profile.html" class="nav-link"><i class="fas fa-user"></i>Profile</a>
       <a href="PW_Home.html" class="nav-link"><i class="fas fa-home"></i>Home</a>
-   
       <a href="PW_Search.html" class="nav-link"> <i class="fas fa-film"></i>Movie </a>
-      
-         
       <a href="PW_settings.html" class="nav-link"><i class="fas fa-cog"></i>Setting</a>
       <a href="PW_help.html" class="nav-link"><i class="fas fa-question-circle"></i>Help</a>
     </div>
@@ -268,37 +285,55 @@
           >
             + Create
           </button>
-           <button class="btn text-white ms-3" id="logoutBtn" title="Cerrar sesión">
-              <i class="fas fa-sign-out-alt fa-lg"></i>
-           </button>
+          <button class="btn text-white ms-3" id="logoutBtn" title="Cerrar sesión">
+            <i class="fas fa-sign-out-alt fa-lg"></i>
+          </button>
         </div>
       </nav>
-                  <!-- MODAL CONFIRMAR CIERRE DE SESIÓN -->
-            <div class="modal fade" id="modalLogout" tabindex="-1" aria-labelledby="modalLogoutLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                <div class="modal-header bg-blue text-white">
-                    <h5 class="modal-title fw-bold" id="modalLogoutLabel">
-                    <i class="fas fa-sign-out-alt me-2"></i> Confirmar cierre de sesión
-                    </h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
 
-                <div class="modal-body text-center">
-                    <p class="fw-semibold text-duke mb-2">¿Estás seguro de que deseas cerrar sesión?
-                </div>
+      <!-- MODAL CONFIRMAR CIERRE DE SESIÓN -->
+      <div
+        class="modal fade"
+        id="modalLogout"
+        tabindex="-1"
+        aria-labelledby="modalLogoutLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header bg-blue text-white">
+              <h5 class="modal-title fw-bold" id="modalLogoutLabel">
+                <i class="fas fa-sign-out-alt me-2"></i> Confirmar cierre de sesión
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
 
-                <div class="modal-footer border-0 justify-content-center pb-4">
-                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
-                    Cancelar
-                    </button>
-                    <button type="button" class="btn-orange px-4" id="confirmLogout">
-                    Cerrar sesión
-                    </button>
-                </div>
-                </div>
+            <div class="modal-body text-center">
+              <p class="fw-semibold text-duke mb-2">
+                ¿Estás seguro de que deseas cerrar sesión?
+              </p>
             </div>
+
+            <div class="modal-footer border-0 justify-content-center pb-4">
+              <button
+                type="button"
+                class="btn btn-secondary px-4"
+                data-bs-dismiss="modal"
+              >
+                Cancelar
+              </button>
+              <button type="button" class="btn-orange px-4" id="confirmLogout">
+                Cerrar sesión
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+
       <!-- CONTENIDO PRINCIPAL -->
       <div class="content">
         <div class="film-info">
@@ -337,15 +372,55 @@
 
         <br />
 
-        <div class="tags">
+        <div class="tags d-flex align-items-center gap-2">
           <span>Comedia</span>
           <span>Sci-fi</span>
-          <span>+</span>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modalCategoria">+</button>
+          <i class="fas fa-heart heart-icon ms-2" id="heartIcon"></i>
         </div>
 
         <div class="reviews mt-4">
           <div class="review"><strong>User1:</strong> Review title</div>
           <div class="review"><strong>User2:</strong> Review title</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL AGREGAR CATEGORÍA -->
+    <div
+      class="modal fade"
+      id="modalCategoria"
+      tabindex="-1"
+      aria-labelledby="modalCategoriaLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalCategoriaLabel">Agregar categoría</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body px-4">
+            <div class="mb-3">
+              <label for="categoriaSelect" class="form-label fw-bold">Selecciona categoría</label>
+              <select class="form-select" id="categoriaSelect">
+                <option selected disabled>Elige una categoría...</option>
+                <option>Acción</option>
+                <option>Drama</option>
+                <option>Aventura</option>
+                <option>Romance</option>
+                <option>Fantasía</option>
+                <option>Terror</option>
+                <option>Animación</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="modal-footer border-0 justify-content-between px-4 pb-4">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn-orange">Agregar</button>
+          </div>
         </div>
       </div>
     </div>
@@ -456,21 +531,27 @@
     </script>
 
     <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const logoutBtn = document.getElementById("logoutBtn");
-                const logoutModal = new bootstrap.Modal(document.getElementById("modalLogout"));
-                const confirmLogout = document.getElementById("confirmLogout");
+      document.addEventListener("DOMContentLoaded", () => {
+        const logoutBtn = document.getElementById("logoutBtn");
+        const logoutModal = new bootstrap.Modal(document.getElementById("modalLogout"));
+        const confirmLogout = document.getElementById("confirmLogout");
 
-                // Mostrar modal
-                logoutBtn.addEventListener("click", () => {
-                logoutModal.show();
-                });
+        logoutBtn.addEventListener("click", () => {
+          logoutModal.show();
+        });
 
-                // Redirigir al login al confirmar
-                confirmLogout.addEventListener("click", () => {
-                window.location.href = "PW_login.html"; // cambia el nombre si tu login es otro
-                });
-            });
+        confirmLogout.addEventListener("click", () => {
+          window.location.href = "PW_login.html";
+        });
+
+        // Corazón interactivo
+        const heartIcon = document.getElementById("heartIcon");
+        heartIcon.addEventListener("click", () => {
+          heartIcon.classList.toggle("active");
+          heartIcon.classList.toggle("fas");
+          heartIcon.classList.toggle("far");
+        });
+      });
     </script>
   </body>
 </html>
